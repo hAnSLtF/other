@@ -1,0 +1,52 @@
+{
+    "editor.fontSize": 15,
+    "editor.fontFamily": "Source Code Pro, Consolas, 'Courier New', monospace, MicroSoft Yahei",
+    "editor.minimap.enabled": true,
+    "editor.minimap.renderCharacters": false,
+    "editor.dragAndDrop": false,
+    "editor.renderWhitespace": "all",
+    "files.autoSave": "off",
+    "files.autoSaveDelay": 5000,
+    "files.associations": {
+        "*.dot": "html"
+    },
+    "workbench.statusBar.visible": true,
+    "workbench.sideBar.location": "left",
+    "workbench.colorTheme": "One Monokai",
+    "workbench.iconTheme": "vscode-icons",
+    "search.exclude": {
+        "**/output": true,
+        "**/node_modules": true,
+        "**/dest": true,
+        "**/build_artifacts": true,
+        "**/build": true
+    },
+    "vsicons.projectDetection.autoReload": true,
+    "vsicons.dontShowNewVersionMessage": true,
+    "path-intellisense.extensionOnImport": true,
+    "path-intellisense.mappings": {
+        "/": "[Math Processing Error]{workspaceRoot}/lib",
+        "global": "/Users/dummy/globalLibs"
+    },
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressUpdateNotice": true,
+        "suppressWelcomeNotice": true
+    },
+    "gitlens.statusBar.enabled": true,
+    "gitlens.statusBar.alignment": "left",
+    "eslint.autoFixOnSave": true,
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.includeLanguages": {
+        "ejs": "html"
+    },
+    "emmet.syntaxProfiles": {
+        "vue-html": "html",
+        "vue": "html"
+    }
+}
