@@ -1,0 +1,22 @@
+{
+  "name": "gulp-compile",
+  "version": "1.0.0",
+  "description": "my first gulp project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hAnSLtF/other.git"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "sunhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hAnSLtF/other/issues"
+  },
+  "homepage": "https://github.com/hAnSLtF/other#readme"
+}
