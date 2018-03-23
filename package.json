@@ -19,7 +19,9 @@
     "url": "https://github.com/hAnSLtF/other/issues"
   },
   "homepage": "https://github.com/hAnSLtF/other#readme",
-  "dependencies": {
-    "gulp": "^3.9.1"
-  }
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "github:gulpjs/gulp#4.0"
+  },
+  "optionalDependencies": {}
 }
