@@ -21,7 +21,9 @@
   "homepage": "https://github.com/hAnSLtF/other#readme",
   "dependencies": {},
   "devDependencies": {
-    "gulp": "github:gulpjs/gulp#4.0"
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-less": "^4.0.0",
+    "gulp-scss": "^1.4.0"
   },
   "optionalDependencies": {}
 }

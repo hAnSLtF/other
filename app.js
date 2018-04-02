@@ -1,1 +1,2 @@
-console.log(12123)
+var gulp = require('./gulpfile');
+console.log(11);
