@@ -21,9 +21,13 @@
   "homepage": "https://github.com/hAnSLtF/other#readme",
   "dependencies": {},
   "devDependencies": {
+    "browser-sync": "^2.23.6",
     "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-clean-css": "^3.9.3",
     "gulp-less": "^4.0.0",
-    "gulp-scss": "^1.4.0"
+    "gulp-scss": "^1.4.0",
+    "gulp-sourcemaps": "^2.6.4"
   },
   "optionalDependencies": {}
 }
