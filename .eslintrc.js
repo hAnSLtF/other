@@ -31,7 +31,7 @@
         //Possible Errors
         "for-direction": 2, //保持 for 循环计数方向正确
         "no-await-in-loop": 2, //禁止在循环中使用 await
-        "no-console": 1, //禁用 console
+        "no-console": 0, //禁用 console
         "no-extra-parens": 2, //禁止不必要的括号
 
         //Best Practices

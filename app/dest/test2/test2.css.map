@@ -1,1 +1,1 @@
-{"version":3,"sources":["test2/test2.less","test2/test2.css"],"names":[],"mappings":"AAAA;EACI,iBAAA;CCCH","file":"test2.css","sourcesContent":["html {\n    background: pink;\n}\n","html {\n  background: pink;\n}\n"]}
+{"version":3,"sources":["test2/test2.less"],"names":[],"mappings":"AAAA,KACI,WAAA","file":"test2.css","sourcesContent":["html {\n    background: pink;\n}\n"]}
