@@ -16,17 +16,17 @@ const gulp = require('gulp'),
     pngquant = require('imagemin-pngquant'), //图片深度压缩
     uglify = require('gulp-uglify'); //js压缩
 
-let path = './app/src/';
-
+//报错处理
 let errorHandeler = function(e) {
     let time = moment().format('HH:mm:ss');
+    let consoleMsg = `[${time.grey}] ${'[error]'.red} ${e.message.replace(`${e.filename} line no. ${e.lineNumber}`, '').red} ${e.filename.magenta} ${'line no.'.yellow}${e.lineNumber.toString().yellow} ${'column no.'.green}${e.column.toString().green}`;
     notifier.notify({
         title: 'error',
         message: e.message,
         icon: './assets/gulp-error.png'
     },
     function() {
-        console.log(`[${time.grey}] ${'[error]'.red} ${e.message}`);
+        console.log(consoleMsg);
     });
     this.emit('end');
 };
@@ -44,6 +44,20 @@ gulp.task('sass', () => {
     return gulp.src(['app/src/**/*.sass', 'app/src/**/*.scss', '!app/src/node_modules/**'])
         .pipe(sass())
         .on('error', errorHandeler)
+        .pipe(gulp.dest('app/dest/'));
+});
+
+gulp.task('autofix', () => {
+    return gulp.src('app/dest/**/*.css')
+        .pipe(sourcemaps.init())
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions', 'Android >= 4.0'],
+            cascade: false, //是否美化属性值 默认：true 像这样：
+            //-webkit-transform: rotate(45deg);
+            //        transform: rotate(45deg);
+            remove: true //是否去掉不必要的前缀 默认：true
+        }))
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('app/dest/'));
 });
 
@@ -65,18 +79,6 @@ gulp.task('browser-sync', () => {
     });
 });
 
-// gulp.task('less', () => {
-//     gulp.src(['app/src/**/*.less', '!app/src/node_modules/**'])
-//         .pipe(sourcemaps.init())
-//         .pipe(less())
-//         .pipe(autoprefixer({
-//             browsers: ['> 1%', 'last 2 versions', 'not ie < 8'],
-//             remove: true
-//         }))
-//         .pipe(cleanCSS())
-//         .pipe(sourcemaps.write('.'))
-//         .pipe(gulp.dest('app/dest/'));
-// });
 
 gulp.task('js', () => {
     gulp.src('app/src/**/*.js')

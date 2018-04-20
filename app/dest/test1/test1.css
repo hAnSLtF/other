@@ -4,6 +4,17 @@ html {
 html body {
   background: blue;
 }
+html body input::-webkit-input-placeholder {
+  color: gray;
+}
+html body input:-ms-input-placeholder {
+  color: gray;
+}
+html body input::-ms-input-placeholder {
+  color: gray;
+}
 html body input::placeholder {
   color: gray;
 }
+
+/*# sourceMappingURL=test1.css.map */
