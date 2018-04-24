@@ -1,8 +1,8 @@
 const gulp = require('gulp'),
     notify = require('gulp-notify'), //报错处理
+    notifier = require('node-notifier'), //提示信息
     colors = require('colors'), //console颜色
     moment = require('moment'), //时间
-    notifier = require('node-notifier'),
     del = require('del'), //删除文件或文件夹
     less = require('gulp-less'), //编译less
     sass = require('gulp-sass'), //编译sass
@@ -153,8 +153,9 @@ gulp.task('serve', () => {
         logFileChanges: true,
         logLevel: 'info'
     });
-    gulp.watch(['app/dest/**/*'], reload);
-    gulp.watch(['app/src/**/!(_)*.{sass, scss}'], gulp.series(['sass', 'autofix', 'cssmin']));
+    gulp.watch(['app/dest/**/*']).on('change', reload);
+    gulp.watch(['app/src/**/*.{sass, scss}'], gulp.series(['sass', 'autofix', 'cssmin']));
+    gulp.watch(['app/src/**/*.less'], gulp.series(['less', 'autofix', 'cssmin']));
     gulp.watch(['app/src/**/!(_)*.js', '!{build, node_modules}/**'], gulp.series(['jsmin']));
 });
 

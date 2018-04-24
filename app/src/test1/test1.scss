@@ -2,10 +2,10 @@
 html {
     background: #fff;
     body {
-        background: red;
+        background: blue;
         input {
             &::placeholder {
-                color: gray;
+                color: blue;
             }
         }
     }
