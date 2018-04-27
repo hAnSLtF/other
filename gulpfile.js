@@ -1,5 +1,4 @@
 const gulp = require('gulp'),
-    notify = require('gulp-notify'), //报错处理
     notifier = require('node-notifier'), //提示信息
     colors = require('colors'), //console颜色
     moment = require('moment'), //时间
