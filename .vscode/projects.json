@@ -1,0 +1,28 @@
+[
+    {
+        "name": "other",
+        "rootPath": "/Users/sunhan/Code/other",
+        "paths": [],
+        "group": ""
+    }, {
+        "name": "h5",
+        "rootPath": "/Users/sunhan/Code/UED.Platform.h5",
+        "paths": [],
+        "group": ""
+    }, {
+        "name": "offline",
+        "rootPath": "/Users/sunhan/Code/UED.Platform.offline",
+        "paths": [],
+        "group": ""
+    }, {
+        "name": "online",
+        "rootPath": "/Users/sunhan/Code/UED.Platform.online",
+        "paths": [],
+        "group": ""
+    }, {
+        "name": "pic",
+        "rootPath": "/Users/sunhan/Code/UED.Assets.pic",
+        "paths": [],
+        "group": ""
+    }
+]
