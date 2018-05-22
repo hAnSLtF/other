@@ -12,8 +12,8 @@
     },
     "workbench.statusBar.visible": true,
     "workbench.sideBar.location": "left",
-    "workbench.colorTheme": "One Monokai",
-    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "Material Theme", //"One Monokai",
+    "workbench.iconTheme": "eq-material-theme-icons",
     "search.exclude": {
         "**/output": true,
         "**/node_modules": true,
@@ -56,5 +56,22 @@
     "explorer.confirmDragAndDrop": false,
     "git.enableSmartCommit": true,
     "window.zoomLevel": 0,
-    "gitlens.historyExplorer.enabled": true
+    "gitlens.historyExplorer.enabled": true,
+    "workbench.colorCustomizations": {
+        "activityBarBadge.background": "#388E3C",
+        "list.activeSelectionForeground": "#388E3C",
+        "list.inactiveSelectionForeground": "#388E3C",
+        "list.highlightForeground": "#388E3C",
+        "scrollbarSlider.activeBackground": "#388E3C50",
+        "editorSuggestWidget.highlightForeground": "#388E3C",
+        "textLink.foreground": "#388E3C",
+        "progressBar.background": "#388E3C",
+        "pickerGroup.foreground": "#388E3C",
+        "tab.activeBorder": "#388E3C",
+        "notificationLink.foreground": "#388E3C"
+    },
+    "materialTheme.cache.workbench.settings": {
+        "accent": "Breaking Bad",
+        "accentPrevious": "Yellow"
+    },
 }
