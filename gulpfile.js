@@ -4,7 +4,7 @@ const gulp = require('gulp'),
     moment = require('moment'), //时间
     del = require('del'), //删除文件或文件夹
     less = require('gulp-less'), //编译less
-    sass = require('gulp-sass'), //编译sass
+    scss = require('gulp-sass'), //编译scss
     browserSync = require('browser-sync'), //实时刷新
     reload = browserSync.reload,
     sourcemaps = require('gulp-sourcemaps'), // sourcemaps
@@ -32,23 +32,25 @@ let errorHandeler = function(e) {
 
 //less编译
 gulp.task('less', () => {
-    return gulp.src(['app/src/**/!(_)*.less', '!{build, node_modules}/**'])
-        .pipe(less())
+    return gulp.src(['app/src/**/*.less', '!{build, node_modules}/**'])
+        .pipe(less({
+            paths: ['../']
+        }))
         .on('error', errorHandeler)
         .pipe(gulp.dest('app/dest/'));
 });
 
-//sass编译
-gulp.task('sass', () => {
-    return gulp.src(['app/src/**/!(_)*.{sass, scss}', '!{build, node_modules}/**'])
-        .pipe(sass())
+//scss编译
+gulp.task('scss', () => {
+    return gulp.src(['app/src/**/!(_*).scss', '!{build, node_modules}/**'])
+        .pipe(scss())
         .on('error', errorHandeler)
         .pipe(gulp.dest('app/dest/'));
 });
 
 //修正浏览器前缀
 gulp.task('autofix', () => {
-    return gulp.src('app/dest/**/!(_)*.css')
+    return gulp.src('app/dest/**/!(_*).css')
         .pipe(sourcemaps.init())
         .pipe(autoprefixer({
             browsers: ['> 1%', 'last 2 versions', 'not ie < 8'],
@@ -63,7 +65,7 @@ gulp.task('autofix', () => {
 
 //压缩css
 gulp.task('cssmin', () => {
-    return gulp.src('app/dest/**/!(_)*.css')
+    return gulp.src('app/dest/**/!(_*).css')
         .pipe(cleanCSS({
             advanced: false, //类型：Boolean 默认：true [是否开启高级优化（合并选择器等）]
             //compatibility: 'ie7',//保留ie7及以下兼容写法 类型：String 默认：''or'*' [启用兼容模式； 'ie7'：IE7兼容模式，'ie8'：IE8兼容模式，'*'：IE9+兼容模式]
@@ -86,14 +88,14 @@ gulp.task('htmlmin', () => {
         minifyJS: true, //压缩页面JS
         minifyCSS: true //压缩页面CSS
     };
-    return gulp.src(['app/dest/**/!(_)*.html', '!{build, node_modules}/**'])
+    return gulp.src(['app/dest/**/!(_*).html', '!{build, node_modules}/**'])
         .pipe(htmlmin(options))
         .pipe(gulp.dest('app/dest/'));
 });
 
 //压缩js
 gulp.task('jsmin', function() {
-    return gulp.src(['app/src/**/!(_)*.js', '!{build, node_modules}/**'])
+    return gulp.src(['app/src/**/!(_*).js', '!{build, node_modules}/**'])
         .pipe(uglify({
             mangle: false, //类型：Boolean 默认：true 是否修改变量名
             compress: true //类型：Boolean 默认：true 是否完全压缩
@@ -152,10 +154,12 @@ gulp.task('serve', () => {
         logFileChanges: true,
         logLevel: 'info'
     });
-    gulp.watch(['app/dest/**/*']).on('change', reload);
-    gulp.watch(['app/src/**/*.{sass, scss}'], gulp.series(['sass', 'autofix', 'cssmin']));
+    gulp.watch(['app/dest/**/*.*']).on('change', reload);
+    gulp.watch(['app/src/**/!(_*).html'], gulp.series(['htmlmin']));
+    gulp.watch(['app/src/**/*.jp(e?)g', 'app/src/**/*.gif', 'app/src/**/*.png'], gulp.series(['imagemin']));
+    gulp.watch(['app/src/**/!(_*).scss'], gulp.series(['scss', 'autofix', 'cssmin']));
     gulp.watch(['app/src/**/*.less'], gulp.series(['less', 'autofix', 'cssmin']));
-    gulp.watch(['app/src/**/!(_)*.js', '!{build, node_modules}/**'], gulp.series(['jsmin']));
+    gulp.watch(['app/src/**/!(_*).js', '!{build, node_modules}/**'], gulp.series(['jsmin']));
 });
 
 gulp.task('default', gulp.series(['serve']));
