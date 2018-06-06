@@ -1,1 +1,1 @@
-{"version":3,"sources":["test1/less/test.css"],"names":[],"mappings":"AAAA;EACE,4BAA4B;CAC7B;AACD;EACE,YAAY;CACb","file":"test.css","sourcesContent":["body {\n  background: green!important;\n}\n.bb {\n  color: blue;\n}\n"]}
+{"version":3,"sources":["test1/less/test.css"],"names":[],"mappings":"AAAA,KAAK,0BAA0B,CAAC,IAAI,UAAU,CAAC","file":"test.css","sourcesContent":["body{background:green!important}.bb{color:#00f}"]}

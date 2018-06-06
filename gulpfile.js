@@ -33,9 +33,7 @@ let errorHandeler = function(e) {
 //less编译
 gulp.task('less', () => {
     return gulp.src(['app/src/**/*.less', '!{build, node_modules}/**'])
-        .pipe(less({
-            paths: ['../']
-        }))
+        .pipe(less())
         .on('error', errorHandeler)
         .pipe(gulp.dest('app/dest/'));
 });

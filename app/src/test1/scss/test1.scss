@@ -3,10 +3,10 @@
 html {
     background: blue;
     body {
-        background: blue;
+        background: red;
         input {
             &::placeholder {
-                color: blue;
+                color: red;
             }
         }
         background: url('./img/gulp.png') center no-repeat;
