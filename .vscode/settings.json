@@ -74,4 +74,9 @@
         "accent": "Breaking Bad",
         "accentPrevious": "Yellow"
     },
+    "indentRainbow.colors": [
+        "rgba(255, 210, 36, 0.1)",
+        "rgba(218, 108, 187, 0.1)",
+        "rgba(135, 201, 219, 0.1)",
+    ],
 }
