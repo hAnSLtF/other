@@ -70,10 +70,6 @@
         "tab.activeBorder": "#388E3C",
         "notificationLink.foreground": "#388E3C"
     },
-    "materialTheme.cache.workbench.settings": {
-        "accent": "Breaking Bad",
-        "accentPrevious": "Yellow"
-    },
     "indentRainbow.colors": [
         "rgba(255, 210, 36, 0.1)",
         "rgba(218, 108, 187, 0.1)",
