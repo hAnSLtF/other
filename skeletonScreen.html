@@ -19,7 +19,7 @@
 
 
 <script>
-//列表组件 
+//列表组件
 Vue.component('user-item', {
   props: ['email', 'name'],
   template: `<div class="item">
@@ -28,7 +28,7 @@ Vue.component('user-item', {
       <p v-text="email"></p>
     </div>`
 })
-//骨架屏组件 
+//骨架屏组件
 Vue.component('loading-item', {
   template: `<div class="animated-background">
      <div class="background-masker header-top"></div>
@@ -84,7 +84,7 @@ body{
 	float: left;
 	width: 40px;
 	height: 40px;
-	background: #eee;
+	background: #ddd;
 	margin-right: 10px;
 	border-radius: 3px;
 }
@@ -121,7 +121,7 @@ body{
     animation-name: placeHolderShimmer;
     animation-timing-function: linear;
     background: #f6f7f8;
-    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background: linear-gradient(to right, #ddd 8%, #ccc 18%, #ddd 33%);
     background-size: 800px 104px;
     height: 40px;
     position: relative;
